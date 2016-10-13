@@ -62,8 +62,10 @@ navBtnEl.addEventListener('click', function(){
 
 // TASK 4 -- Add Guest to List
 
- var inputEl = document.querySelector("#add-guest .answer-box")
- //console.log(inputEl);
+ var inputEl = document.querySelector("#add-guest input")
+ var enteringGuestEl = document.querySelector('#add-guest .guest-list')
+ //console.log(enteringGuest);
+ console.log(inputEl);
 
  var respondToKey = function(evt){
 
@@ -72,9 +74,11 @@ navBtnEl.addEventListener('click', function(){
     if(evt.keyCode === 13){
        //console.log('test', evt.keyCode )
        console.log('input VAL', evt.target.value )
-       inputEl(evt.target.value )
-
+      //innerHTML
+      //console.log(enteringGuestEl.innerHTML);
+      enteringGuestEl.innerHTML += '<li>' + evt.target.value + '<li>'
     }
+
 }
 
 inputEl.addEventListener('keydown', respondToKey )
